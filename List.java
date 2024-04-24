@@ -1,6 +1,7 @@
 public class List {
     protected int size;
     protected Node start;
+    protected Node finish;
 
     public List(){
         size = 0;
@@ -10,19 +11,22 @@ public class List {
     public void addFirstNode(Node n){
         n.next = this.start;
         this.start = n;
+        size++;
     }
 
     public void addNode(Node n){
         if (start != null) addNextNode(start, n);
-        else start = n;
-        size++;
+        else addFirstNode(n);
     }
 
     protected void addNextNode(Node current, Node n){
         if(current.equals(n)){
             System.out.println("questo nodo è già presente nella lista");
         }if(current.next != null) addNextNode(current.next, n);
-        else current.next = n;
+        else {
+            current.next = n;
+            size++;
+        }
     }
 
 
