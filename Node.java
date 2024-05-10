@@ -18,6 +18,10 @@ public class Node{
         return next;
     }
 
+    public Node getBack() {
+        return back;
+    }
+
     public int getInt(){
         try{
             return new java.util.Scanner(System.in).nextInt();
@@ -37,6 +41,18 @@ public class Node{
         info += "\t\tvalore:\n" + value + "\n";
         if(next != null) info += "\tsuccessivo:\n" + next;
         else info += "\tlista terminata\n";
+        return info;
+    }
+
+    @Override
+    public String toStringContrario() {
+        String info ="";
+        try{
+            info += next.toStringContrario();
+        }catch (NullPointerException e){}
+        finally{
+            return "valore:\t" + valore + "\n";
+        }
         return info;
     }
 

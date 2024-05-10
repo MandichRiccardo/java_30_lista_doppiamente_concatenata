@@ -11,6 +11,7 @@ public class List {
     public void addFirstNode(Node n){
         n.next = this.start;
         this.start = n;
+        start.next.back = start;
         size++;
     }
 
@@ -25,6 +26,7 @@ public class List {
         }if(current.next != null) addNextNode(current.next, n);
         else {
             current.next = n;
+            current.next.back = current;
             size++;
         }
     }
@@ -56,6 +58,19 @@ public class List {
 
     public void printList(){
         System.out.println(this);
+    }
+
+    public String toStringContrario(){
+        String info = "";
+        info += "size:\t" + size + "\n";
+        info += "\tlista iniziata\n";
+        if(start != null) info += "\tstart:\n" + start.toStringContrario() + "\n";
+        else info += "\tlista terminata\n";
+        return info;
+    }
+
+    public void printContrario(){
+        System.out.println(this.toStringContrario())
     }
 
     public void order(){
