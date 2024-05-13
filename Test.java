@@ -3,7 +3,7 @@ public class Test{
         List l = new List();
         while(getInput()){
             l.addNode(new Node());
-            System.out.println(l.toString());
+            System.out.println(l);
             System.out.println(l.toStringContrario());
         }
     }

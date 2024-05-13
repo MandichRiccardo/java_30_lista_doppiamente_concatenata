@@ -45,13 +45,11 @@ public class Node{
     }
 
     public String toStringContrario() {
-        String info ="";
         try{
-            info += next.toStringContrario();
+            return next.toStringContrario() + "valore:\t" + value + "\n";
         }catch (NullPointerException ignore){
             return "valore:\t" + value + "\n";
         }
-        return info;
     }
 
     public boolean equals(Node n){

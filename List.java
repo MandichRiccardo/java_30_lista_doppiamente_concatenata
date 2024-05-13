@@ -11,7 +11,9 @@ public class List {
     public void addFirstNode(Node n){
         n.next = this.start;
         this.start = n;
-        start.next.back = start;
+        try{
+            start.next.back = start;
+        }catch (NullPointerException ignore){}
         size++;
     }
 
