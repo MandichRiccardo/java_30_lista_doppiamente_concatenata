@@ -11,7 +11,7 @@ public class Test{
     public static boolean getBoolean(){
         try{
             return new java.util.Scanner(System.in).nextBoolean();
-        }catch(InputMismatchException e){
+        }catch(java.util.InputMismatchException e){
             System.out.println("devi inserire un boolenao nel formato \"true\" o \"false\"");
             return getBoolean();
         }

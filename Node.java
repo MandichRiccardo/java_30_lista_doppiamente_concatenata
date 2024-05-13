@@ -44,14 +44,12 @@ public class Node{
         return info;
     }
 
-    @Override
     public String toStringContrario() {
         String info ="";
         try{
             info += next.toStringContrario();
-        }catch (NullPointerException e){}
-        finally{
-            return "valore:\t" + valore + "\n";
+        }catch (NullPointerException ignore){
+            return "valore:\t" + value + "\n";
         }
         return info;
     }

@@ -70,7 +70,7 @@ public class List {
     }
 
     public void printContrario(){
-        System.out.println(this.toStringContrario())
+        System.out.println(this.toStringContrario());
     }
 
     public void order(){
